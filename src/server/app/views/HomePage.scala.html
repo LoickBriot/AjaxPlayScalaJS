@@ -1,0 +1,37 @@
+@(title: String, message: String)
+
+
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@title</title>
+    @*<link rel="stylesheet" href='@routes.Assets.at("assets/css/app.css")'>*@
+</head>
+
+<body>
+
+@message
+
+
+<!-- Include Scala.js compiled code -->
+<script type="text/javascript" src='@routes.Assets.at("js/client-fastopt.js")'></script>
+    <!-- Run tutorial.webapp.TutorialApp -->
+    <script type="text/javascript">
+      webapp.client.MainJS().main();
+    </script>
+
+
+<button id="click-me-button" type="button"
+        onclick="webapp.client.MainJS().getTodos()">Click me!</button>
+
+
+
+<button id="click-me-button" type="button"
+        onclick="webapp.client.MainJS().getRows(189)">Click me!</button>
+
+
+</body>
+</html>
