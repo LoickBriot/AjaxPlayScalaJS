@@ -26,3 +26,5 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-less" % "1.0.6")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-digest" % "1.1.0")
 
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "x.y.z")
+

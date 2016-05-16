@@ -8,7 +8,14 @@ import org.scalajs.sbtplugin.ScalaJSPlugin._
 import sbt.Keys._
 import sbt.Project.projectToRef
 
+/*
 
+http://www.scala-sbt.org/sbt-native-packager/introduction.html#goals
+
+enablePlugins(UniversalPlugin)
+enablePlugins(WindowsPlugin)
+enablePlugins(JDKPackagerPlugin)
+*/
 
 
 
@@ -89,6 +96,6 @@ lazy val server  = (project in file("src/server"))
   .settings(scalaJSProjects := Seq(client))
   .settings(pipelineStages := Seq(scalaJSProd, gzip))
   .settings(resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases")
-  .enablePlugins(PlayScala)
+  .enablePlugins(PlayScala, UniversalPlugin,WindowsPlugin,JDKPackagerPlugin)
   .aggregate(Seq(client).map(projectToRef): _*)
   .dependsOn(sharedJVM)

@@ -5,8 +5,10 @@
 
 
 ### LOGIN AND AUTHENTIFICATION ###
-GET     /                                               controllers.Application.index()
+GET     /                                               controllers.Application.index(photo1:String ?= "", photo2: String ?= "")
 POST    /api/*path                                      controllers.Application.ajaxAPI(path)
+
+POST    /upload                                         controllers.Application.uploadAction()
 
 
 #POST    /api/webapp/shared/MainShared/MyApi/getTodos    controllers.Application.autowireApi(path: String)

@@ -22,6 +22,7 @@ object PlayAutowire extends Controller {
     def createImpl(autowireContext: AutowireContext): T
   }
 
+
   def api[T](server: AutowirePlayServer[T])(s: String) = Action.async { implicit request =>
     val path = s.split("/").toSeq
 
